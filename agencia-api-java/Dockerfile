@@ -11,6 +11,6 @@ FROM openjdk:17-jdk-slim
 
 EXPOSE 8080
 
-COPY --from=build /target/sabedoria-java-0.0.1-SNAPSHOT.jar agencia.jar
+COPY --from=build /target/agencia-api-0.0.1-SNAPSHOT.jar agencia.jar
 
 ENTRYPOINT [ "java", "-jar", "agencia.jar" ]
