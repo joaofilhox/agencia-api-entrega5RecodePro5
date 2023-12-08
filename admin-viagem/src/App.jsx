@@ -1,12 +1,12 @@
-import ClienteCRUD from "./pages/clienteCRUD"
-
+import Header from "./components/header"
+import  RoutesMain  from "./routes/RoutesMain"
 
 function App() {
-
   return (
-    <>
-      <ClienteCRUD />
-    </>
+    <div className="App">
+      <Header />
+      <RoutesMain />
+    </div>
   )
 }
 
