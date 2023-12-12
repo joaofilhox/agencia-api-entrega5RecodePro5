@@ -1,10 +1,16 @@
-import { useState } from 'react'
+
+import Footer from '../components/footer'
+import Header from '../components/header'
+import { RoutesMain } from './routes/RoutesMain'
+import "./reset.css"
 
 function App() {
 
   return (
     <>
-    <h1>Olá mundo</h1>
+      <Header />
+      <RoutesMain />
+      <Footer />
     </>
   )
 }

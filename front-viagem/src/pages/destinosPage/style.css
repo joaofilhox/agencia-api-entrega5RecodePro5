@@ -1,0 +1,40 @@
+/* Destinos.css */
+.destinos {
+    padding: 20px;
+  }
+  
+  .destinos h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+  
+  .destinos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .destino {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .destino img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .destino h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .destino p {
+    color: #666;
+  }
+  
