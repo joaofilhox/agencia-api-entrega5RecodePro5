@@ -35,7 +35,7 @@ const Table = ({ titulos, dados, deleteFunction }) => {
               ) : null
             ))}
             <td className='acoes-buttons'>
-            <Link to={`/${item.nome ? "atualizarCliente" : "atualizarLugar"}/${item.id}`}>
+            <Link to={`/${item.nome ? "atualizarCliente" : "atualizarDestino"}/${item.id}`}>
                 <button className="botao-editar">Atualizar</button>
               </Link>
               <button
