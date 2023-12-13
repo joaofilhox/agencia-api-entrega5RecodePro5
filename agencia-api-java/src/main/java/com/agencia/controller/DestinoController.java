@@ -22,31 +22,28 @@ import com.agencia.repository.DestinoRepository;
 public class DestinoController {
 
     @Autowired
-    private DestinoRepository lugarRepository;
+    private DestinoRepository destinoRepository;
 
     @GetMapping
     public List<Destino> listar() {
-        return lugarRepository.findAll();
+        return destinoRepository.findAll();
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Destino adicionar(@RequestBody Destino lugar) {
-        return lugarRepository.save(lugar);
+    public Destino adicionar(@RequestBody Destino destino) {
+        return destinoRepository.save(destino);
     }
 
-    // Você pode adicionar métodos para atualizar, deletar e outros, similar ao controlador de clientes
-
-    // Exemplo de método para atualizar
     @PutMapping("/{id}")
-    public Destino atualizar(@PathVariable String id, @RequestBody Destino lugarAtualizado) {
-        lugarAtualizado.setId(id);
-        return lugarRepository.save(lugarAtualizado);
+    public Destino atualizar(@PathVariable String id, @RequestBody Destino destinoAtualizado) {
+        destinoAtualizado.setId(id);
+        return destinoRepository.save(destinoAtualizado);
     }
     
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable String id) {
-        lugarRepository.deleteById(id);
+        destinoRepository.deleteById(id);
     }
 
 }
