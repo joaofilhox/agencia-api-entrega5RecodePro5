@@ -2,14 +2,14 @@ package com.agencia.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "lugares")
-public class Lugar {
+@Document(collection = "destinos")
+public class Destino {
 
     @Id
     private String id;
     private String pais;
     private String cidade;
-    private String lugar;
+	private String estadio;
     private String fotoUrl;
     private String descricao;
     private double preco;
@@ -33,10 +33,10 @@ public class Lugar {
 		this.cidade = cidade;
 	}
 	public String getLugar() {
-		return lugar;
+		return estadio;
 	}
-	public void setLugar(String lugar) {
-		this.lugar = lugar;
+	public void setEstadio(String estadio) {
+		this.estadio = estadio;
 	}
 	public String getFotoUrl() {
 		return fotoUrl;

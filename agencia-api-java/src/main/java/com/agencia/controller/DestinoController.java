@@ -14,24 +14,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.agencia.model.Lugar;
-import com.agencia.repository.LugarRepository;
+import com.agencia.model.Destino;
+import com.agencia.repository.DestinoRepository;
 
 @RestController
-@RequestMapping("/lugares")
-public class LugarController {
+@RequestMapping("/destinos")
+public class DestinoController {
 
     @Autowired
-    private LugarRepository lugarRepository;
+    private DestinoRepository lugarRepository;
 
     @GetMapping
-    public List<Lugar> listar() {
+    public List<Destino> listar() {
         return lugarRepository.findAll();
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Lugar adicionar(@RequestBody Lugar lugar) {
+    public Destino adicionar(@RequestBody Destino lugar) {
         return lugarRepository.save(lugar);
     }
 
@@ -39,7 +39,7 @@ public class LugarController {
 
     // Exemplo de método para atualizar
     @PutMapping("/{id}")
-    public Lugar atualizar(@PathVariable String id, @RequestBody Lugar lugarAtualizado) {
+    public Destino atualizar(@PathVariable String id, @RequestBody Destino lugarAtualizado) {
         lugarAtualizado.setId(id);
         return lugarRepository.save(lugarAtualizado);
     }
