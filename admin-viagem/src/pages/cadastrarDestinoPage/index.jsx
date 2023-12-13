@@ -5,25 +5,25 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 import './style.css';
 
-const CadastroLugarPage = () => {
+const CadastrarDestinoPage = () => {
 
     const { register, handleSubmit } = useForm();
 
     const submit = async (formData) => {
         console.log(formData)
         try {
-            const response = await api.post('/lugares', formData);
-            console.log('Lugar cadastrado:', response.data);
+            const response = await api.post('/destinos', formData);
+            console.log('Destino cadastrado:', response.data);
 
-            alert('Lugar cadastrado com sucesso!');
+            alert('Destino cadastrado com sucesso!');
 
 
         } catch (error) {
-            console.error('Erro ao cadastrar Lugar:', error);
+            console.error('Erro ao cadastrar Destino:', error);
 
             if (error.response) {
 
-                alert(`Erro ao cadastrar Lugar: ${error.response.data.message}`);
+                alert(`Erro ao cadastrar Destino: ${error.response.data.message}`);
             } else if (error.request) {
 
                 alert('Erro ao realizar a solicitação. Por favor, tente novamente mais tarde.');
@@ -37,10 +37,10 @@ const CadastroLugarPage = () => {
     return (
         <div className="cadastro-container">
             <div className="imagem-container">
-                <img src='https://www.melhoresdestinos.com.br/wp-content/uploads/2021/08/melhores-praias-brasil-garapua-3-820x1230.jpg' alt="Lugar" />
+                <img src='https://www.melhoresdestinos.com.br/wp-content/uploads/2021/08/melhores-praias-brasil-garapua-3-820x1230.jpg' alt="Destino" />
             </div>
             <div className="formulario-container">
-                <h2>Cadastro de Lugar</h2>
+                <h2>Cadastro de Destino</h2>
                 <form onSubmit={handleSubmit(submit)}>
                     <Input
                         label="País"
@@ -57,11 +57,11 @@ const CadastroLugarPage = () => {
                         name="cidade"
                     />
                     <Input
-                        label="Lugar"
+                        label="Estadio"
                         type="text"
-                        placeholder="Digite o lugar"
+                        placeholder="Digite o estadio"
                         register={register}
-                        name="lugar"
+                        name="estadio"
                     />
                     <Input
                         label="URL da Foto"
@@ -91,4 +91,4 @@ const CadastroLugarPage = () => {
     );
 };
 
-export default CadastroLugarPage;
+export default CadastrarDestinoPage;

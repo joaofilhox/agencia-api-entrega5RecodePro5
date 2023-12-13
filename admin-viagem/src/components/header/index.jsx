@@ -9,14 +9,14 @@ function Header() {
         <Link to="/" className="nav-link">
           Cadastra Cliente
         </Link>
-        <Link to="/cadastraLugar" className="nav-link">
-          Cadastra lugar
+        <Link to="/cadastrarDestino" className="nav-link">
+          Cadastra Novo Destino
         </Link>
         <Link to="/listarClientes" className="nav-link">
           Lista de clientes
         </Link>
-        <Link to="/listarLugares" className="nav-link">
-          Lista de lugares
+        <Link to="/listarDestinos" className="nav-link">
+          Lista de Destinos
         </Link>
       </nav>
     </header>

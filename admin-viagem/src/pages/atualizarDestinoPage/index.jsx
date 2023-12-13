@@ -6,41 +6,42 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 import './style.css';
 
-const AtualizarLugarPage = () => {
+const AtualizarDestinoPage = () => {
     const { id } = useParams();
-  const [lugar, setLugar] = useState({});
+  const [destino, setDestino] = useState({});
   
   const { register, handleSubmit, reset } = useForm({
-    defaultValues:lugar,
+    defaultValues:destino,
   });
   
   useEffect(() => {
-    const fetchLugar = async () => {
+    const fetchDestino = async () => {
       try {
-        const response = await api.get(`/lugares`);
+        const response = await api.get(`/destinos`);
         
         (response.data).forEach(element => {
           if(element.id = id) 
-            setLugar(element);
+            setDestino(element);
           reset(element)
           });
         
       } catch (error) {
-        console.error('Erro ao buscar lugares:', error);
+        console.error('Erro ao buscar Destino:', error);
       }
     };
     
-    fetchLugar();
+    fetchDestino();
   }, [reset]);
   
 
   const onSubmit = async (formData) => {
     try {
-      await api.put(`/lugares/${id}`, formData);
-      alert('Lugar atualizado com sucesso!');
+      await api.put(`/destinos/${id}`, formData);
+      console.log(destino);
+      alert('Destino atualizado com sucesso!');
 
     } catch (error) {
-      console.error('Erro ao atualizar Lugar:', error);
+      console.error('Erro ao atualizar Destino:', error);
      
     }
   };
@@ -48,10 +49,10 @@ const AtualizarLugarPage = () => {
     return (
         <div className="cadastro-container">
             <div className="imagem-container">
-            <img src='https://www.melhoresdestinos.com.br/wp-content/uploads/2021/08/melhores-praias-brasil-garapua-3-820x1230.jpg' alt="Lugar" />
+            <img src='https://www.melhoresdestinos.com.br/wp-content/uploads/2021/08/melhores-praias-brasil-garapua-3-820x1230.jpg' alt="Destino" />
             </div>
             <div className="formulario-container">
-                <h2>Atualizar Lugar</h2>
+                <h2>Atualizar Destino</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Input
                         label="País"
@@ -68,11 +69,11 @@ const AtualizarLugarPage = () => {
                         name="cidade"
                     />
                     <Input
-                        label="Lugar"
+                        label="Estadio"
                         type="text"
-                        placeholder="Digite o lugar"
+                        placeholder="Digite o estadio de futebol"
                         register={register}
-                        name="lugar"
+                        name="estadio"
                     />
                     <Input
                         label="URL da Foto"
@@ -102,4 +103,4 @@ const AtualizarLugarPage = () => {
     );
 };
 
-export default AtualizarLugarPage;
+export default AtualizarDestinoPage;
