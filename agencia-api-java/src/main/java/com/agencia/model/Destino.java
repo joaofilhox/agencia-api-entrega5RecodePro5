@@ -32,7 +32,7 @@ public class Destino {
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
-	public String getLugar() {
+	public String getEstadio() {
 		return estadio;
 	}
 	public void setEstadio(String estadio) {
