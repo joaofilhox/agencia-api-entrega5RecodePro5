@@ -7,7 +7,7 @@ const Contato = () => {
       <h1>Entre em Contato</h1>
       <div className="info">
         <p>Estamos ansiosos para ouvir você! Entre em contato conosco para mais informações sobre nossos serviços.</p>
-        <p>Email: exemplo@example.com</p>
+        <p>Email: voaevibra@example.com</p>
         <p>Telefone: (00) 1234-5678</p>
       </div>
       <div className="form">

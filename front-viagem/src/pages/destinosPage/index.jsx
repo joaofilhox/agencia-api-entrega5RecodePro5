@@ -1,30 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { api } from '../../services/api';
 import './style.css';
 
 const Destinos = () => {
 
-  const destinos = [
-    {
-      nome: 'Paris, França',
-      descricao: 'Explore a cidade do amor e sua rica cultura.',
-      imagem: 'link_para_imagem_paris'
-    },
-    {
-      nome: 'Tóquio, Japão',
-      descricao: 'Descubra a cidade futurista e tradicional ao mesmo tempo.',
-      imagem: 'link_para_imagem_toquio'
-    },
-  ];
+  const [dataFromAPI, setDataFromAPI] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await api.get('/destinos');
+        setDataFromAPI(response.data);
+        console.log();
+      } catch (error) {
+        console.error('Erro ao buscar dados da API:', error);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className="destinos">
-      <h1>Destinos</h1>
+      <h1>Destinos Futebolístico</h1>
       <div className="destinos-grid">
-        {destinos.map((destino, index) => (
+        {dataFromAPI && dataFromAPI.map((destino, index) => (
           <div key={index} className="destino">
-            <img src={destino.imagem} alt={destino.nome} />
-            <h3>{destino.nome}</h3>
+            <div className="div-comeco">
+            <h3>{`${destino.pais}, ${destino.cidade}`}</h3>
+            <img src={destino.fotoUrl} alt={destino.estadio} />
+            <h4>{destino.estadio}</h4>
             <p>{destino.descricao}</p>
+            </div>
+            
+            <div className="div-final">
+              <span>{`R$ ${destino.preco},00`}</span>
+            <button className="btn">Comprar</button>
+             
+            </div>
+
           </div>
         ))}
       </div>
