@@ -1,4 +1,4 @@
-/* Destinos.css */
+
 .destinos {
     padding: 20px;
   }
@@ -14,11 +14,26 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
   }
+
+  .div-comeco {
+    grid-column: 1 / span 1;
+  }
+  
+  .div-final {
+    grid-column: -1 / span 1; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   
   .destino {
-    background-color: #f9f9f9;
+    background-color: #e2e3e7;
     padding: 20px;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
   }
   
   .destino img {
@@ -32,9 +47,32 @@
   .destino h3 {
     font-size: 24px;
     margin-bottom: 10px;
+    margin-top: 0;
+  }
+
+  .destino h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 0;
   }
   
   .destino p {
     color: #666;
   }
+
+  .btn {
+    font-size: 19px;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
   
+  .btn:hover {
+    background-color: #555;
+  }
