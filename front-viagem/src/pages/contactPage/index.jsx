@@ -1,9 +1,9 @@
 import React from 'react';
 import './style.css';
 
-const Contato = () => {
+const Contact = () => {
   return (
-    <div className="contato">
+    <div className="contact">
       <h1>Entre em Contato</h1>
       <div className="info">
         <p>Estamos ansiosos para ouvir você! Entre em contato conosco para mais informações sobre nossos serviços.</p>
@@ -13,9 +13,9 @@ const Contato = () => {
       <div className="form">
         <h2>Envie uma Mensagem</h2>
         <form>
-          <input type="text" placeholder="Nome" />
+          <input type="text" placeholder="Name" />
           <input type="email" placeholder="Email" />
-          <textarea placeholder="Mensagem"></textarea>
+          <textarea placeholder="Message"></textarea>
           <button type="submit">Enviar</button>
         </form>
       </div>
@@ -23,4 +23,4 @@ const Contato = () => {
   );
 }
 
-export default Contato;
+export default Contact;

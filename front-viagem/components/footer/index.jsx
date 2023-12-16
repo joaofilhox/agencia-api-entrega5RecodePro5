@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-section about">
           <h2>Sobre Nós</h2>
-          <p>Transformamos o amor pelo futebol em uma 
+          <p>Transformamos o amor pelo futebol em uma
             jornada apaixonante que vai além das fronteiras do campo.</p>
         </div>
         <div className="footer-section links">
@@ -19,13 +19,13 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer-section contact">
-          <h2>Contato</h2>
+        <h2>Contato</h2>
           <p>Email: voaevibra@example.com</p>
           <p>Telefone: (00) 1234-5678</p>
         </div>
       </div>
       <div className="footer-bottom">
-        &copy; 2023 Agência de Viagem Voa e Vibra. Todos os direitos reservados.
+      &copy; 2023 Agência de Viagem Voa e Vibra. Todos os direitos reservados.
       </div>
     </footer>
   );
