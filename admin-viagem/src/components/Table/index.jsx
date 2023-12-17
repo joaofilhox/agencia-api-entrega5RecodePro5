@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './style.css'; 
+import './style.css';
 
 const Table = ({ titulos, dados, deleteFunction }) => {
   const [itens, setItens] = useState(dados);
@@ -14,41 +14,41 @@ const Table = ({ titulos, dados, deleteFunction }) => {
       console.error('Erro ao excluir item:', error);
     }
   };
-  
 
   return (
-    <table className="tabela">
-      <thead>
-        <tr>
-          {titulos.map((titulo, index) => (
-            <th key={index}>{titulo}</th>
-          ))}
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        {itens.map((item, index) => (
-          <tr key={index}>
-            {Object.keys(item).map((key) => (
-              key !== 'id' && key !== 'senha' ? (
-                <td key={key}>{item[key]}</td>
-              ) : null
+    <div className="table-container">
+      <table className="table">
+        <thead>
+          <tr>
+            {titulos.map((titulo, index) => (
+              <th key={index}>{titulo}</th>
             ))}
-            <td className='acoes-buttons'>
-            <Link to={`/${item.nome ? "atualizarCliente" : "atualizarDestino"}/${item.id}`}>
-                <button className="botao-editar">Atualizar</button>
-              </Link>
-              <button
-                className="botao-deletar"
-                onClick={() => handleDelete(item.id)}
-              >
-                Deletar
-              </button>
-            </td>
+            <th>Ações</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {itens.map((item, index) => (
+            <tr key={index}>
+              {Object.keys(item).map((key) =>
+                key !== 'id' && key !== 'senha' ? (
+                  <td key={key} data-label={key}>
+                    {item[key]}
+                  </td>
+                ) : null
+              )}
+              <td className="actions-buttons">
+                <Link to={`/${item.nome ? 'atualizarCliente' : 'atualizarDestino'}/${item.id}`}>
+                  <button className="edit-button">Atualizar</button>
+                </Link>
+                <button className="delete-button" onClick={() => handleDelete(item.id)}>
+                  Deletar
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 

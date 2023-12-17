@@ -1,7 +1,7 @@
 import React from 'react';
-import './style.css'; 
+import './style.css';
 
-const Input = ({ register, name, label, type, placeholder, value, onChange, }) => {
+const Input = ({ register, name, label, type, placeholder, value, onChange }) => {
   return (
     <div className="input-container">
       <label>{label}</label>
@@ -9,7 +9,7 @@ const Input = ({ register, name, label, type, placeholder, value, onChange, }) =
         type={type}
         placeholder={placeholder}
         onChange={onChange}
-        {...register(name, {defaultValue: value})}
+        {...register(name, { defaultValue: value })}
       />
     </div>
   );

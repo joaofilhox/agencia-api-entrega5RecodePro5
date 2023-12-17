@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { api } from '../../services/api';
 import { useParams } from 'react-router-dom';
 import Input from '../../components/Input';
-import Button from '../../components/Button';
+import Button from '../../components/button';
 import './style.css';
 
 const AtualizarDestinoPage = () => {

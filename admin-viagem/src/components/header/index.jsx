@@ -1,26 +1,49 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./header.css"; 
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { TiThMenu } from "react-icons/ti";
+import './style.css';
 
-function Header() {
+const Header = () => {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <header className="header">
+    <header>
       <nav className="navbar">
-        <Link to="/" className="nav-link">
-          Cadastra Cliente
-        </Link>
-        <Link to="/cadastrarDestino" className="nav-link">
-          Cadastra Novo Destino
-        </Link>
-        <Link to="/listarClientes" className="nav-link">
-          Lista de clientes
-        </Link>
-        <Link to="/listarDestinos" className="nav-link">
-          Lista de Destinos
-        </Link>
+        <div className="logo">Voa e Vibra</div>
+
+        <div className={`menu-icon ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+          <div className="bar"><TiThMenu size={30}/></div>
+        </div>
+
+        <ul className={`nav-links ${isMenuOpen ? 'show' : ''}`}>
+          <li>
+            <Link to="/" onClick={toggleMenu}>
+            Cadastrar Novo Cliente
+            </Link>
+          </li>
+          <li>
+            <Link to="cadastrarDestino" onClick={toggleMenu}>
+            Cadastrar Novo Destino
+            </Link>
+          </li>
+          <li>
+            <Link to="/listarClientes" onClick={toggleMenu}>
+            Lista de clientes
+            </Link>
+          </li>
+          <li>
+            <Link to="/listarDestinos" onClick={toggleMenu}>
+            Lista de Destinos
+            </Link>
+          </li>
+        </ul>
       </nav>
     </header>
   );
-}
+};
 
 export default Header;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { api } from '../../services/api';
 import Input from '../../components/Input';
-import Button from '../../components/Button';
+import Button from '../../components/button';
 import { useForm } from 'react-hook-form';
 import './style.css';
 

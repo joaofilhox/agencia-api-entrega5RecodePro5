@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { api } from '../../services/api';
 import Table from "../../components/Table";
+import LoadingScreen from '../../components/loadingScreen';
 
 const ListaDestinosPage = () => {
   const [dataFromAPI, setDataFromAPI] = useState(null);
@@ -37,7 +38,7 @@ const ListaDestinosPage = () => {
           <Table titulos={titulos} dados={dataFromAPI} deleteFunction={deleteDestino} />
         </>
       ) : (
-        <h1>Carregando...</h1>
+        <LoadingScreen/>
       )}
     </div>
   );
