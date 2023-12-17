@@ -18,6 +18,8 @@ Backend: O backend foi desenvolvido em Java.
 
 Frontend: Com o React, construír um frontend interativo e responsivo, garantindo que você possa navegar facilmente pelo site.
 
+### Importante: A hospedagem da API é gratuita e pode apresentar atrasos na exibição dos conteúdos na tela. Se encontrar demoras, agradeço sua paciência.
+
   Visualize o site aqui: <a href="https://front-viagem.vercel.app/" target="_blank">www.voaevibra.com.br</a>
 
 ## Contato :curly_haired_man:
