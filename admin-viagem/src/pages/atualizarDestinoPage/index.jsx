@@ -49,7 +49,7 @@ const AtualizarDestinoPage = () => {
     return (
         <div className="cadastro-container">
             <div className="imagem-container">
-            <img src='https://www.melhoresdestinos.com.br/wp-content/uploads/2021/08/melhores-praias-brasil-garapua-3-820x1230.jpg' alt="Destino" />
+            <img src='https://www.dicaseducacaofisica.info/wp-content/uploads/2023/04/maiores-estadios-futebol-mundo.webp' alt="Destino" />
             </div>
             <div className="formulario-container">
                 <h2>Atualizar Destino</h2>

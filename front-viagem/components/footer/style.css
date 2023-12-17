@@ -11,16 +11,23 @@
   max-width: 75rem;
   margin: 0 auto;
   padding: 0 1.25rem;
-  gap: 5px;
+  gap: 50px;
 }
 
 .footer-section {
   flex: 1;
+  color: #fff;
 }
 
 .footer-section h2 {
   margin-bottom: 0.625rem;
 }
+
+
+.footer-section p {
+  color: #fff;
+}
+
 
 .footer-section ul {
   list-style: none;

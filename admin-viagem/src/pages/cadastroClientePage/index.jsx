@@ -33,7 +33,7 @@ const cadastroClientePage = () => {
     return (
         <div className="cadastro-container">
             <div className="imagem-container">
-                <img src='https://revistaazul.voeazul.com.br/wp-content/uploads/2023/03/motivos-para-viajar.jpg' alt="Cliente" />
+                <img src='https://png.pngtree.com/thumb_back/fh260/background/20220604/pngtree-soccer-passion-executive-active-person-photo-image_8359110.jpg' alt="Cliente" />
             </div>
             <div className="formulario-container">
                 <h2>Cadastro de Cliente</h2>
